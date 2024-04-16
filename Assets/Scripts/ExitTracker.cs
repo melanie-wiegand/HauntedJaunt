@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Used this thread https://stackoverflow.com/questions/55922893/how-to-make-a-2d-arrow-on-the-screen-that-always-point-to-a-3d-object-inside-the
+// as well as ChatGPT ai to make this script
+// also found these videos very helpful https://www.youtube.com/watch?v=b4Xsv85Mkhg, https://www.youtube.com/watch?v=pYEAwiKFKeg
+
 public class ExitTracker : MonoBehaviour
 {
     public GameObject Target;
 
-    RectTransform rt;
+    // RectTransform rt;
 
     // Start is called before the first frame update
     //void Start()
@@ -29,7 +34,12 @@ public class ExitTracker : MonoBehaviour
     //    rt.localEulerAngles = new Vector3(rt.localEulerAngles.x, angle, rt.localEulerAngles.z);
     //   }
 
-    public Transform player; // Reference to the player's transform
+
+    // abandoned the above method because it required the arrow
+    // to be a child of the player, which was causing issues since the 
+    // rotation was bound to player direction
+
+    public Transform player;
     public Transform target;
 
     void Update()
